@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace ForInRowGame
 {
@@ -11,7 +11,7 @@ namespace ForInRowGame
 
             string player1 = "X", player2 = "O";
 
-            int column, moves = 0;
+            int column, row;
 
             string[,] table = new string[16,16];
 
@@ -34,16 +34,21 @@ namespace ForInRowGame
 
                 Board(table);
 
+                row = Convert.ToInt32(Console.ReadLine());
+                
                 Console.WriteLine(player1 + " Choose a column");
 
                 column = Convert.ToInt32(Console.ReadLine());
+                                
+                player1 = table[row,column];
+                
+                Console.WriteLine(player2 + " Choose a column");
 
-                string[] myTable = new string[16];
-
-                for (int i = 0; i<= 16 +1; i++) { 
+                column = Convert.ToInt32(Console.ReadLine());
+                
+                player2 = table[row,column];
 
                 
-                }
 
                 
 
