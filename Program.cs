@@ -59,7 +59,7 @@ namespace ForInRowGame
 
                     table[row, column] = turnPlayer;
 
-                    if (turnPlayer == "X")
+                    if (turnPlayer == player1)
 
                     {
 
@@ -71,7 +71,7 @@ namespace ForInRowGame
 
                     {
 
-                        turnPlayer = "X";
+                        turnPlayer = player1;
 
                     }
 
@@ -93,7 +93,7 @@ namespace ForInRowGame
 
 
 
-                    if (moves == 9)
+                    if (moves == 256)
 
                     {
 
@@ -111,7 +111,7 @@ namespace ForInRowGame
 
                     for (int i = 0; i < table.GetLength(0); i++)
                     {
-                        if (table[i, 0] == table[i, 1] && table[i, 1] == table[i, 2] && table[i, 1] != " ")
+                        if (table[i, 0] == table[i, 1] && table[i, 1] == table[i, 2] && table[i, 2] == table[i, 2] && table[i,1] != " ")
 
                         {
                             return true;
@@ -120,7 +120,7 @@ namespace ForInRowGame
 
                     for (int i = 0; i < table.GetLength(1); i++)
                     {
-                        if (table[0, i] == table[1, i] && table[1, i] == table[2, i] && table[1, i] != " ")
+                        if (table[i, 1] == table[i, 2] && table[i, 2] == table[i, 3] && table[i, 3] == table[i, 4] && table[i, 1] != " ")
                         {
                             return true;
                         }
@@ -128,14 +128,14 @@ namespace ForInRowGame
 
                     for (int i = 0; i < table.GetLength(1); i++)
                     {
-                        if (table[0, 0] == table[1, 1] && table[1, 1] == table[2, 2] && table[1, i] != " ")
+                        if (table[1, 1] == table[2, 2] && table[2, 2] == table[3, 3] && table[3, 3] == table[4,4] && table[1, i] != " ")
                         {
                             return true;
                         }
 
                     }
                     for (int i = 0; i < table.GetLength(1); i++)
-                        if (table[0, 2] == table[1, 1] && table[1, 1] == table[2, 0] && table[1, i] != " ")
+                        if (table[1, 2] == table[2, 2] && table[1, 1] == table[2, 0] && table[1, i] != " ")
                         {
                             return true;
                         }
@@ -197,24 +197,5 @@ namespace ForInRowGame
         }
 
 
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-            }
-
-
-        }
     }
 }
