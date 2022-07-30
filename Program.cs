@@ -39,14 +39,20 @@ namespace ForInRowGame
 
                     Board(table);
 
-                    row = 16;
+                    row = 15;
+
+                    turnPlayer = player1;
 
                     Console.WriteLine(player1Name + " Choose a column");
 
                     column = Convert.ToInt32(Console.ReadLine());
 
-                    Console.WriteLine(player1Name + " input a " + player1 + " in a column " + column);
+                    table[row, column] = turnPlayer;
 
+
+                    Console.WriteLine(player1Name + " input a " + player1 + " in a column " + column);
+                    
+                    Board(table);
 
                     Console.WriteLine(player2Name + " Choose a column");
 
@@ -54,26 +60,12 @@ namespace ForInRowGame
 
                     Console.WriteLine(player2Name + " input a " + player2 + " in a column " + column);
 
-                    turnPlayer = player1;
-
+                    turnPlayer = player2;
+                    Board(table);
 
                     table[row, column] = turnPlayer;
 
-                    if (turnPlayer == player1)
-
-                    {
-
-                        turnPlayer = player2;
-
-                    }
-
-                    else
-
-                    {
-
-                        turnPlayer = player1;
-
-                    }
+                    
 
                     if (VictoryChecker(table))
 
@@ -111,7 +103,7 @@ namespace ForInRowGame
 
                     for (int i = 0; i < table.GetLength(0); i++)
                     {
-                        if (table[i, 0] == table[i, 1] && table[i, 1] == table[i, 2] && table[i, 2] == table[i, 2] && table[i,1] != " ")
+                        if (table[i, 0] == table[i, 1] && table[i, 1] == table[i, 2] && table[i, 2] == table[i, 2] && table[i, 1] != " ")
 
                         {
                             return true;
@@ -128,7 +120,7 @@ namespace ForInRowGame
 
                     for (int i = 0; i < table.GetLength(1); i++)
                     {
-                        if (table[1, 1] == table[2, 2] && table[2, 2] == table[3, 3] && table[3, 3] == table[4,4] && table[1, i] != " ")
+                        if (table[1, 1] == table[2, 2] && table[2, 2] == table[3, 3] && table[3, 3] == table[4, 4] && table[1, i] != " ")
                         {
                             return true;
                         }
@@ -168,8 +160,8 @@ namespace ForInRowGame
 
                     {
 
-                        Console.Write("|___|");
-
+                        Console.Write("|_" + table[i -1, j] + "_|");
+                        
                     }
 
 
