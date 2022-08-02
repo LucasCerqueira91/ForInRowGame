@@ -12,89 +12,47 @@ namespace ForInRowGame
 
 
             {
-
                 string player1 = "X", player2 = "O", player1Name, player2Name, turnPlayer;
-
-                int column, row, moves = 0;
-
+                int column, row = 15, moves = 0;
                 string[,] table = new string[16, 16];
 
                 Console.WriteLine("Welcome to the 4 in the row Game Type the name of the players and enjoy!!");
-
                 Console.WriteLine("Type a name of the player 1");
-
                 player1Name = Console.ReadLine();
-
                 Console.WriteLine("Type a name of the player 2");
-
                 player2Name = Console.ReadLine();
-
-
-
 
                 while (true)
                 {
-
                     Console.Clear();
-
                     Board(table);
-
-                    row = 15;
-
                     turnPlayer = player1;
-
                     Console.WriteLine(player1Name + " Choose a column");
-
                     column = Convert.ToInt32(Console.ReadLine());
-
                     table[row, column] = turnPlayer;
-
-
                     Console.WriteLine(player1Name + " input a " + player1 + " in a column " + column);
-                    
+                    Console.Clear();
                     Board(table);
-
-                    Console.WriteLine(player2Name + " Choose a column");
-
-                    column = Convert.ToInt32(Console.ReadLine());
-
-                    Console.WriteLine(player2Name + " input a " + player2 + " in a column " + column);
-
                     turnPlayer = player2;
-                    Board(table);
-
+                    Console.WriteLine(player2Name + " Choose a column");
+                    column = Convert.ToInt32(Console.ReadLine());
                     table[row, column] = turnPlayer;
-
-                    
+                    Console.WriteLine(player2Name + " input a " + player2 + " in a column " + column);
+                    Console.Clear();
+                    Board(table);
 
                     if (VictoryChecker(table))
-
                     {
-
-                        Console.WriteLine("The player " + turnPlayer + " is the Winner!!");
-
-
-
-                        break;
-
+                        Console.WriteLine("The player " + turnPlayer + " is the Winner!!");                       
                     }
-
-
-
                     moves = moves + 1;
 
-
-
                     if (moves == 256)
-
                     {
-
                         Console.WriteLine("Draw");
 
                         break;
-
                     }
-
                 }
 
                 static bool VictoryChecker(string[,] table)
@@ -143,24 +101,32 @@ namespace ForInRowGame
 
 
             {
-                Console.WriteLine("  |01 ||02 ||03 ||04 ||05 ||06 ||07 ||08 ||09 ||10 ||11 ||12 ||13 ||14 ||15 ||16 |");
-                for (int i = 1; i < table.GetLength(0) + 1; i++)
+                Console.WriteLine("  |01||02||03||04||05||06||07||08||09||10||11||12||13||14||15||16|");
+
+                for (int index = table.GetLowerBound(0); index <= table.GetUpperBound(1); index++)
                 {
-                    if (i < 10)
-                    {
-                        Console.Write(i + " ");
-                    }
-                    else
-                    {
-                        Console.Write(i);
-                    }
+                    Console.WriteLine();
+                }
 
 
+                for (int i = 0; i < table.GetLength(0); i++)
+                {
+                    if (i <= 16)
+                    {
+                        Console.Write("  ");
+                    }
+
+                   
                     for (int j = 0; j < table.GetLength(1); j++)
 
                     {
 
-                        Console.Write("|_" + table[i -1, j] + "_|");
+                        Console.Write("|_" + table[i, j] + "_|");
+                        if (j <= 16)
+                        {
+                            Console.Write("");
+                        }
+                        
                         
                     }
 
