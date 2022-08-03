@@ -43,7 +43,7 @@ namespace ForInRowGame
 
                     if (VictoryChecker(table))
                     {
-                        Console.WriteLine("The player " + turnPlayer + " is the Winner!!");                       
+                        Console.WriteLine("The player " + turnPlayer + " is the Winner!!");
                     }
                     moves = moves + 1;
 
@@ -101,12 +101,8 @@ namespace ForInRowGame
 
 
             {
-                Console.WriteLine("  |01||02||03||04||05||06||07||08||09||10||11||12||13||14||15||16|");
 
-                for (int index = table.GetLowerBound(0); index <= table.GetUpperBound(1); index++)
-                {
-                    Console.WriteLine();
-                }
+                Console.WriteLine("  |01||02||03||04||05||06||07||08||09||10||11||12||13||14||15||16|");
 
 
                 for (int i = 0; i < table.GetLength(0); i++)
@@ -116,18 +112,18 @@ namespace ForInRowGame
                         Console.Write("  ");
                     }
 
-                   
+
                     for (int j = 0; j < table.GetLength(1); j++)
 
                     {
+                        string finalLine = "_|";
 
-                        Console.Write("|_" + table[i, j] + "_|");
-                        if (j <= 16)
-                        {
-                            Console.Write("");
-                        }
-                        
-                        
+                        int removeLine = 0;
+                        Console.Write("|_" + table[i, j] +  finalLine);
+                        finalLine.Remove(removeLine);
+
+
+
                     }
 
 
