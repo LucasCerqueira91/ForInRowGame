@@ -122,10 +122,11 @@ namespace ForInRowGame
 
                        
                             Console.Write("|_" + table[i, j] + finalLine);
-                            finalLine = "|";
-                        
 
 
+                        //string source = "Many mountains are behind many clouds today.";
+                        // Remove a substring from the middle of the string.
+                        //Remove text console c#
                     }
 
 
