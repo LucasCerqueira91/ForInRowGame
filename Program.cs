@@ -118,21 +118,28 @@ namespace ForInRowGame
                     for (int j = 1; j < table.GetLength(1); j++)
 
                     {
-                        string finalLine = "_|";
+                         string finalLine = "_";
 
-                       
-                            Console.Write("|_" + table[i, j] + finalLine);
+                        Console.Write("|_" + table[i, j] + finalLine + "|");
 
+                        //if (table[i,j] != finalLine)
+                        //{
+                        //   var chenge = new StringBuilder(finalLine);
+                        //    chenge[0] = table[i, j];
+                        //    finalLine = chenge.ToString();
 
-                                                //string finalLine = "_|";
-                        
-                        ////Console.Write("|_" +  table[i, j] + finalLine);
-                        //Console.Write("| " + finalLine);
-                        //Console.Write(table[i, j] + finalLine.Replace("_", table[i, j]));
+                        //}
+                        //var theString = "ABCDEF";
+                        //var sb = new StringBuilder(theString);
+                        //sb[2] = "r" //replace letter at index 2 with "r"
+                        //theString = sb.ToString(); //theString: "ABrDEF"
 
-                        ////string source = "Many mountains are behind many clouds today.";
-                        //// Remove a substring from the middle of the string.
-                        ////Remove text console c#
+                        ////Console.Write("| " + finalLine);
+                        ////Console.Write(table[i, j] + finalLine.Replace("_", table[i, j]));
+
+                        //////string source = "Many mountains are behind many clouds today.";
+                        ////// Remove a substring from the middle of the string.
+                        //////Remove text console c#
                     }
 
 
