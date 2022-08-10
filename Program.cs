@@ -26,13 +26,26 @@ namespace ForInRowGame
 
                 while (true)
                 {
+
                     Console.Clear();
                     Board(table);
                     turnPlayer = player1;
                     Console.WriteLine(player1Name + " Choose a column");
                     column = Convert.ToInt32(Console.ReadLine());
-                    table[row, column] = turnPlayer;
-                    Console.WriteLine(player1Name + " input a " + player1 + " in a column " + column);
+                    if (table[row, column] != "X" && table[row,column] != "O" )
+                    {
+                        table[row, column] = turnPlayer;
+                        Console.WriteLine(player1Name + " input a " + player1 + " in a column " + column);
+                    }
+                    else
+                    {
+                        Console.WriteLine(player1Name + " This column is full please Choose a column empty");
+                        column = Convert.ToInt32(Console.ReadLine());
+                        table[row, column] = turnPlayer;
+                        Console.WriteLine(player1Name + " input a " + player1 + " in a column " + column);
+                    }
+
+
                     Console.Clear();
                     Board(table);
                     turnPlayer = player2;
@@ -118,9 +131,12 @@ namespace ForInRowGame
                     for (int j = 1; j < table.GetLength(1); j++)
 
                     {
-                         string finalLine = "_";
+                        string finalLine = "_";
 
                         Console.Write("|_" + table[i, j] + finalLine + "|");
+
+
+
 
                         //if (table[i,j] != finalLine)
                         //{
@@ -142,11 +158,7 @@ namespace ForInRowGame
                         //////Remove text console c#
                     }
 
-
                     Console.WriteLine();
-
-
-
 
 
                 }
