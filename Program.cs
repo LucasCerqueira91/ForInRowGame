@@ -32,7 +32,7 @@ namespace ForInRowGame
                     turnPlayer = player1;
                     Console.WriteLine(player1Name + " Choose a column");
                     column = Convert.ToInt32(Console.ReadLine());
-                    if (table[row, column] != "X" && table[row,column] != "O" )
+                    if (table[row, column] != "X" && table[row, column] != "O")
                     {
                         table[row, column] = turnPlayer;
                         Console.WriteLine(player1Name + " input a " + player1 + " in a column " + column);
@@ -51,8 +51,18 @@ namespace ForInRowGame
                     turnPlayer = player2;
                     Console.WriteLine(player2Name + " Choose a column");
                     column = Convert.ToInt32(Console.ReadLine());
-                    table[row, column] = turnPlayer;
-                    Console.WriteLine(player2Name + " input a " + player2 + " in a column " + column);
+                    if (table[row, column] != "X" && table[row, column] != "O")
+                    {
+                        table[row, column] = turnPlayer;
+                        Console.WriteLine(player2Name + " input a " + player2 + " in a column " + column);
+                    }
+                    else
+                    {
+                        Console.WriteLine(player2Name + " This column is full please Choose a column empty");
+                        column = Convert.ToInt32(Console.ReadLine());
+                        table[row, column] = turnPlayer;
+                        Console.WriteLine(player2Name + " input a " + player2 + " in a column " + column);
+                    }
                     Console.Clear();
                     Board(table);
 
@@ -163,16 +173,6 @@ namespace ForInRowGame
 
                 }
             }
-
-
-
-
-
-
-
-
-
-
 
 
 
