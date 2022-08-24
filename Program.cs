@@ -5,7 +5,7 @@ namespace ForInRowGame
 
     internal class Program
     {
-        static void Main(string[] args)
+         static void Main(string[] args)
         {
 
 
@@ -127,7 +127,7 @@ namespace ForInRowGame
 
             {
 
-                 Console.WriteLine("  |01||02||03||04||05||06||07||08||09||10||11||12||13||14||15||16|");
+                Console.WriteLine("  |01||02||03||04||05||06||07||08||09||10||11||12||13||14||15||16|");
 
 
                 for (int i = 1; i < table.GetLength(0); i++)
@@ -141,24 +141,26 @@ namespace ForInRowGame
                     for (int j = 1; j < table.GetLength(1); j++)
 
                     {
-
+                        
                         string finalLine = "__";
 
-                        string result = finalLine.Replace("{ table[i, j]}", finalLine);
+                        
 
-                        if( result == table[i, j])
+                        string result = finalLine.Replace("{ table[i, j]}", finalLine);
+                        result = finalLine;
+                        if (result == table[i, j])
                         {
                             Console.Write("|" + result + "|");
                         }
                         else
                         {
-                            Console.Write("|" + finalLine + "|");                  
+                            Console.Write("|" + finalLine + "|");
                         }
 
 
 
 
-                    //https://stackoverflow.com/questions/60812682/c-sharp-how-to-replace-the-variables-inside-strings
+                        //https://stackoverflow.com/questions/60812682/c-sharp-how-to-replace-the-variables-inside-strings
 
 
 
