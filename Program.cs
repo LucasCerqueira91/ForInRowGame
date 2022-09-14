@@ -5,7 +5,7 @@ namespace ForInRowGame
 
     internal class Program
     {
-         static void Main(string[] args)
+        static void Main(string[] args)
         {
 
 
@@ -14,6 +14,7 @@ namespace ForInRowGame
             {
                 string player1, player2, player1Name, player2Name, turnPlayer;
                 int column, row = 16, moves = 0;
+                // meter um for com espaços vazios no array
                 string[,] table = new string[17, 17];
 
                 Console.WriteLine("Welcome to the 4 in the row Game Type the name of the players and enjoy!!");
@@ -141,27 +142,27 @@ namespace ForInRowGame
                     for (int j = 1; j < table.GetLength(1); j++)
 
                     {
-                        
-                        string finalLine = "__";
-
-                        
-
-                        string result = finalLine.Replace("{ table[i, j]}", finalLine);
-                        result = finalLine;
-                        if (result == table[i, j])
-                        {
-                            Console.Write("|" + result + "|");
-                        }
-                        else
-                        {
-                            Console.Write("|" + finalLine + "|");
-                        }
 
 
+                        Console.WriteLine("|__" + table[i, j] + "|");
 
 
                         //https://stackoverflow.com/questions/60812682/c-sharp-how-to-replace-the-variables-inside-strings
 
+                        //string finalLine = "__";
+
+                        
+
+                        //string result = finalLine.Replace("{ table[i, j]}", finalLine);
+                        //result = finalLine;
+                        //if (result == table[i, j])
+                        //{
+                        //    Console.Write("|" + result + "|");
+                        //}
+                        //else
+                        //{
+                        //    Console.Write("|" + finalLine + "|");
+                        //}
 
 
                         //if (table[i,j] != finalLine)
@@ -197,3 +198,4 @@ namespace ForInRowGame
 
     }
 }
+
