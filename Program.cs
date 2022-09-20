@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 namespace ForInRowGame
 {
@@ -15,7 +16,27 @@ namespace ForInRowGame
                 string player1, player2, player1Name, player2Name, turnPlayer;
                 int column, row = 16, moves = 0;
                 // meter um for com espaços vazios no array
-                string[,] table = new string[17, 17];
+                
+
+                //int columns = table.GetLength(1);
+                //int rows = table.GetLength(0);
+                //var temp = Enumerable.Range(0, rows)
+                //    .Select(i => Enumerable.Range(0, columns).Select(j => table[i, j]).ToList())
+                //    .Where(row => !row.All(string.IsNullOrEmpty))
+                //    .ToList();
+
+                //string[,] result = new string[temp.Count, columns];
+                //rows = temp.Count;
+
+                //for (int r = 0; r < rows; r++)
+                //{
+                //    var row1 = temp[r];
+                //    for (var c = 0; c < row1.Count; c++)
+                //    {
+                //        result[r, c] = row1[c];
+                //    }
+                //}
+                
 
                 Console.WriteLine("Welcome to the 4 in the row Game Type the name of the players and enjoy!!");
                 Console.WriteLine("Type a name of the player 1");
@@ -24,6 +45,16 @@ namespace ForInRowGame
                 Console.WriteLine("Type a name of the player 2");
                 player2Name = Console.ReadLine();
                 player2 = "O";
+                string[,] table = new string[17, 17];
+
+
+                for (int r = 0; r < table.GetLength(0); r++)
+                {
+                    for (int c = 0; c < table.GetLength(1); c++)
+                    {
+                        Console.WriteLine(table[r, c] = " ");
+                    }
+                }
 
                 while (true)
                 {
@@ -79,6 +110,7 @@ namespace ForInRowGame
 
                         break;
                     }
+
                 }
 
                 static bool VictoryChecker(string[,] table)
@@ -144,14 +176,21 @@ namespace ForInRowGame
                     {
 
 
-                        Console.WriteLine("|__" + table[i, j] + "|");
+                        Console.Write("|_" + table[i, j] + "|");
 
 
                         //https://stackoverflow.com/questions/60812682/c-sharp-how-to-replace-the-variables-inside-strings
 
                         //string finalLine = "__";
 
-                        
+                        //for (int i = 0; i < 18; i++)
+                        //{
+                        //    for (int j = 0; j < 18; j++)
+                        //    {
+                        //        if (table[i, j] == " ")
+                        //            table[i, j] = turnPlayer;
+                        //    }
+                        //}
 
                         //string result = finalLine.Replace("{ table[i, j]}", finalLine);
                         //result = finalLine;
@@ -198,4 +237,3 @@ namespace ForInRowGame
 
     }
 }
-
