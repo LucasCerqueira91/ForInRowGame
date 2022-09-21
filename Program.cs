@@ -15,28 +15,8 @@ namespace ForInRowGame
             {
                 string player1, player2, player1Name, player2Name, turnPlayer;
                 int column, row = 16, moves = 0;
-                // meter um for com espaços vazios no array
-                
 
-                //int columns = table.GetLength(1);
-                //int rows = table.GetLength(0);
-                //var temp = Enumerable.Range(0, rows)
-                //    .Select(i => Enumerable.Range(0, columns).Select(j => table[i, j]).ToList())
-                //    .Where(row => !row.All(string.IsNullOrEmpty))
-                //    .ToList();
 
-                //string[,] result = new string[temp.Count, columns];
-                //rows = temp.Count;
-
-                //for (int r = 0; r < rows; r++)
-                //{
-                //    var row1 = temp[r];
-                //    for (var c = 0; c < row1.Count; c++)
-                //    {
-                //        result[r, c] = row1[c];
-                //    }
-                //}
-                
 
                 Console.WriteLine("Welcome to the 4 in the row Game Type the name of the players and enjoy!!");
                 Console.WriteLine("Type a name of the player 1");
@@ -69,7 +49,7 @@ namespace ForInRowGame
                         table[row, column] = turnPlayer;
                         Console.WriteLine(player1Name + " input a " + player1 + " in a column " + column);
                     }
-                    else
+                    else if (table[row, column] == "O")
                     {
                         Console.WriteLine(player1Name + " This column is full please Choose a column empty");
                         column = Convert.ToInt32(Console.ReadLine());
@@ -95,6 +75,37 @@ namespace ForInRowGame
                         table[row, column] = turnPlayer;
                         Console.WriteLine(player2Name + " input a " + player2 + " in a column " + column);
                     }
+
+                    //if (turnPlayer == player1 || turnPlayer == player2)
+                    //{
+                    //    for (int i = 0; i < table.GetLength(0); i++)
+
+                    //    {
+
+                    //        for (int j = 0; j <= table.GetLength(1); i++)
+
+                    //        {
+
+                    //            Console.WriteLine("The {0}º number ordered is {1}", i + 1, table[i, j]);
+                    //            table[i, j] = (turnPlayer);
+                    //        }
+                    //Array.Reverse(table);
+                    // }
+                    //}
+
+
+                    //for (int i = 0; j < table.GetLength(0); i++)
+                    //{
+                    //    bool row = true;
+                    //    for (int x = 0; x < table.GetLength(1); x++)
+                    //        row &&= table[j, i]; // row stays true until it encounters a false
+                    //    if (row) Debug.Log(y + " row is filled");
+                    //}
+
+
+                    //https://stackoverflow.com/questions/56244635/checking-if-the-rows-of-the-2d-array-is-true
+
+
                     Console.Clear();
                     Board(table);
 
@@ -175,57 +186,28 @@ namespace ForInRowGame
 
                     {
 
-
                         Console.Write("|_" + table[i, j] + "|");
 
 
-                        //https://stackoverflow.com/questions/60812682/c-sharp-how-to-replace-the-variables-inside-strings
-
-                        //string finalLine = "__";
-
-                        //for (int i = 0; i < 18; i++)
-                        //{
-                        //    for (int j = 0; j < 18; j++)
-                        //    {
-                        //        if (table[i, j] == " ")
-                        //            table[i, j] = turnPlayer;
-                        //    }
-                        //}
-
-                        //string result = finalLine.Replace("{ table[i, j]}", finalLine);
-                        //result = finalLine;
-                        //if (result == table[i, j])
-                        //{
-                        //    Console.Write("|" + result + "|");
-                        //}
-                        //else
-                        //{
-                        //    Console.Write("|" + finalLine + "|");
-                        //}
-
-
-                        //if (table[i,j] != finalLine)
-                        //{
-                        //   var chenge = new StringBuilder(finalLine);
-                        //    chenge[0] = table[i, j];
-                        //    finalLine = chenge.ToString();
-
-                        //}
-                        //var theString = "ABCDEF";
-                        //var sb = new StringBuilder(theString);
-                        //sb[2] = "r" //replace letter at index 2 with "r"
-                        //theString = sb.ToString(); //theString: "ABrDEF"
-
-                        ////Console.Write("| " + finalLine);
-                        ////Console.Write(table[i, j] + finalLine.Replace("_", table[i, j]));
-
-                        //////string source = "Many mountains are behind many clouds today.";
-                        ////// Remove a substring from the middle of the string.
-                        //////Remove text console c#
                     }
 
                     Console.WriteLine();
 
+
+
+                    //            2.The application receives five numbers and returns them ordered from lowest to largest.
+
+                    //The numbers must be stored in an array as they are received;
+
+
+
+                        
+
+                    
+
+                    int[,] size = new int[17,17];
+
+                  
 
                 }
             }
