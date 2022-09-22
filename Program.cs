@@ -102,6 +102,7 @@ namespace ForInRowGame
                     //    if (row) Debug.Log(y + " row is filled");
                     //}
 
+                    //Dynamically 2D array
 
                     //https://stackoverflow.com/questions/56244635/checking-if-the-rows-of-the-2d-array-is-true
 
@@ -201,13 +202,13 @@ namespace ForInRowGame
 
 
 
-                        
+
+
+
 
                     
 
-                    int[,] size = new int[17,17];
 
-                  
 
                 }
             }
