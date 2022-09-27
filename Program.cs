@@ -76,6 +76,17 @@ namespace ForInRowGame
                         Console.WriteLine(player2Name + " input a " + player2 + " in a column " + column);
                     }
 
+                                        //for (int i = 0; i < table.GetLength(0); i++)
+                    //{
+                    //    for (int j = 0; j < table.GetLength(1); j++)
+                    //    {
+                    //        if (table[i, j] == " ")
+                    //        {
+                    //            turnPlayer = i + 1;
+                    //            break;
+                    //        }
+                    //    }
+                    //}
                     //if (turnPlayer == player1 || turnPlayer == player2)
                     //{
                     //    for (int i = 0; i < table.GetLength(0); i++)
